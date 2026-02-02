@@ -1,0 +1,197 @@
+*{
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  background:#ffffff;
+}
+
+/* MAIN LAYOUT */
+.page{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;   /* ⬅ important */
+  gap:140px;                /* ⬅ exact DLIMS spacing */
+  padding:120px 60px;
+ /* ⬅ top se neeche */
+  flex-wrap:wrap;   /* ⬅ ADD THIS */
+}
+
+
+/* LEFT FORM */
+.left{
+  width:320px;
+  margin-top:40px;          /* ⬅ card ke mid ke barabar */
+}
+
+.left h3{
+  font-size:18px;
+  font-weight:600;
+  text-align:center;
+  margin-bottom:6px;
+}
+
+.underline{
+  width:38px;
+  height:3px;
+  background:#f4a300;
+  margin:0 auto 32px auto;  /* ⬅ center underline */
+}
+
+label{
+  font-size:13px;
+  display:block;
+  margin-bottom:6px;
+  color:#000;
+}
+
+label span{
+  color:red;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  border:1px solid #dcdcdc;
+  border-radius:4px;
+  margin-bottom:18px;
+  font-size:13px;
+}
+
+.verified{
+  color: white;
+  width:100%;
+  padding:12px;
+  background:#ffd966;
+  border:none;
+  border-radius:25px;
+  font-weight:600;
+  cursor:default;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+}
+
+.verified span{
+  color:green;
+  font-size:14px;
+}
+
+/* RIGHT CARD */
+.card{
+  width:520px;
+  background:#fff;
+  border-radius:14px;
+  padding:32px 38px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card h2{
+  color:#0b63ff;
+  text-align:center;
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:22px;
+}
+
+.photo{
+  display:block;
+  width:90px;
+  height:110px;
+  object-fit:cover;
+  border-radius:8px;
+  margin:0 auto 10px;
+}
+
+.card h4{
+  text-align:center;
+  margin-bottom:28px;
+  font-weight:600;
+  font-size:15px;
+}
+
+/* DETAILS GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:42px;
+  row-gap:6px;
+}
+
+.label{
+  font-size:12px;
+  color:#666;
+  margin-top:12px;
+}
+
+.grid p{
+  font-size:13px;
+  margin:2px 0;
+}
+
+/* ADDRESS */
+.address{
+  margin-top:4px;
+  font-size:13px;
+  line-height:1.4;
+}
+
+/* TAGS */
+.tags{
+  margin-top:8px;
+}
+
+.tags span{
+  background:#6c757d;
+  color:white;
+  padding:4px 10px;
+  border-radius:12px;
+  font-size:12px;
+  margin-right:6px;
+  display:inline-block;
+}
+
+/* LICENSE NUMBER */
+.license{
+  color:#0a9d4b;
+  font-weight:700;
+  margin-top:6px;
+  font-size:14px;
+}
+.photo{
+  box-shadow: 0px 0px 1px 1px grey;
+}
+/* ============================= */
+/* MOBILE RESPONSIVE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .page{
+    flex-direction: column !important; /* ⬅ FORCE */
+    gap:30px !important;
+    padding:30px 16px !important;
+    align-items: center;
+  }
+
+  .left{
+    width:100% !important;
+    max-width:360px;
+    margin-top:0;
+    order:1;  /* ⬅ LEFT ALWAYS FIRST */
+  }
+
+  .card{
+    width:100% !important;
+    max-width:360px;
+    padding:22px 18px;
+    order:2;  /* ⬅ RIGHT ALWAYS SECOND */
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
